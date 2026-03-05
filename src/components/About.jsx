@@ -5,7 +5,7 @@ import { BiLogoLinkedin, BiLogoWhatsapp, BiLogoGithub } from "react-icons/bi";
 const About = ({ t }) => {
   return (
     <div
-      className="mx-auto max-w-6xl w-full min-h-screen p-4 md:p-8 lg:p-28 flex items-center justify-center"
+      className="mx-auto max-w-6xl w-full min-h-screen p-4 pt-28 md:p-8 md:pt-8 lg:p-28 lg:pt-28 flex items-center justify-center"
       id="about"
     >
       <motion.div
@@ -71,6 +71,11 @@ const About = ({ t }) => {
 
         <img
           src="/alfredo-.png"
+          width="400"
+          height="400"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           className="w-[300px] md:w-[400px] rounded-full hover:shadow-2xl hover:shadow-blue-800 hover:scale-105 hover:rotate-2 transition-all duration-500"
           alt={t?.profileAlt || "Profile photo"}
         />

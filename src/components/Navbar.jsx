@@ -11,7 +11,7 @@ const Navbar = ({ t }) => {
           href="#about"
           className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-blue-600 via-sky-500 to-blue-400 text-transparent bg-clip-text hover:scale-110 transition-all duration-300"
         >
-          Alfredo Mello
+          Portfolio
         </a>
 
         <ul className="hidden md:flex gap-10">

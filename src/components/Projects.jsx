@@ -1,64 +1,330 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { projectData } from "../projectData";
+import { FiExternalLink } from "react-icons/fi";
 
-const Projects = () => {
+const Experience = () => {
   return (
-    <div
-      className="mx-auto max-w-6xl p-4 sm:p-10 text-white flex flex-col gap-10 sm:gap-16 items-center justify-center"
-      id="projects"
+    <section
+      id="experience"
+      className="mx-auto max-w-6xl p-4 sm:p-10 text-white flex flex-col gap-10 sm:gap-16"
     >
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-4xl sm:text-6xl"
+        className="text-4xl sm:text-6xl text-center"
       >
-        My Projects
+        Experience
       </motion.h1>
 
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
-      >
-        {projectData.map((project) => (
-          <a
-            href={project.link}
-            key={project.id}
-            target="_blank"
-            className="flex flex-col rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-800"
-          >
-            <img
-              src={project.image}
-              className="hover:scale-105 transition-transform duration-300"
-              alt=""
-            />
-
-            <div className="flex flex-col gap-3 bg-gray-900 p-5 transition-colors duration-300 hover:bg-gray-800 flex-grow">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-
-              <p className="text-sm text-slate-400">{project.description}</p>
-
-              <div className="flex gap-3 flex-wrap mt-auto">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-2 py-1 bg-indigo-900 rounded-xl text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
+      <div className="flex flex-col gap-8">
+        {/* Thrive Digital */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
+        >
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <h2 className="text-2xl font-semibold">Web Developer</h2>
+                <p className="text-blue-400 font-medium">Thrive Digital</p>
               </div>
+
+              <a
+                href="https://thrivedigitalmkt.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
+              >
+                Visit Project <FiExternalLink />
+              </a>
             </div>
-          </a>
-        ))}
-      </motion.div>
-    </div>
+
+            <p className="text-sm text-slate-400">Freelance Project | Brazil</p>
+
+            <p className="text-slate-300 leading-relaxed">
+              Developed and redesigned the Thrive Digital website, creating a
+              more modern and strategic online presence aligned with the brand’s
+              new positioning. The project focused on responsiveness, visual
+              identity, performance, and user experience.
+            </p>
+
+            <div className="flex flex-col gap-2 text-slate-300 mt-2">
+              <p>• Built and customized pages using WordPress and Elementor.</p>
+              <p>
+                • Improved the site’s structure, layout, and visual consistency.
+              </p>
+              <p>• Created and adjusted design assets using Canva.</p>
+              <p>
+                • Implemented SEO, cookies, and chatbot integrations with
+                WordPress plugins.
+              </p>
+              <p>
+                • Ensured full responsiveness across mobile, tablet, and
+                desktop.
+              </p>
+              <p>
+                • Structured essential pages such as Privacy Policy, Cookies,
+                and Terms & Conditions.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 mt-4">
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                WordPress
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Elementor
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Canva
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                SEO
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Responsive Design
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Hobbi Eletro */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
+        >
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <h2 className="text-2xl font-semibold">
+                  Full Stack Web Developer
+                </h2>
+                <p className="text-blue-400 font-medium">Hobbi Eletro</p>
+              </div>
+
+              <a
+                href="https://hobbieletro.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
+              >
+                Visit Project <FiExternalLink />
+              </a>
+            </div>
+
+            <p className="text-sm text-slate-400">
+              Personal E-commerce Project
+            </p>
+
+            <p className="text-slate-300 leading-relaxed">
+              Developed an e-commerce project focused on electronics, building
+              both the frontend and backend structure to support product
+              display, shopping flow, and data management. The project
+              emphasized usability, organization, and scalable development.
+            </p>
+
+            <div className="flex flex-col gap-2 text-slate-300 mt-2">
+              <p>
+                • Built product pages, shopping flow, and dynamic interface
+                components.
+              </p>
+              <p>
+                • Developed backend features using PHP for data handling and
+                business logic.
+              </p>
+              <p>• Managed database structure and integrations with MySQL.</p>
+              <p>
+                • Worked on responsive layouts for a consistent cross-device
+                experience.
+              </p>
+              <p>
+                • Organized code structure to improve maintenance and
+                scalability.
+              </p>
+              <p>
+                • Focused on delivering a practical and user-friendly e-commerce
+                experience.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 mt-4">
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                PHP
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                MySQL
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                JavaScript
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                E-commerce
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Responsive Design
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Netflix Clone */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
+        >
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <h2 className="text-2xl font-semibold">Front-End Developer</h2>
+                <p className="text-blue-400 font-medium">Netflix Clone</p>
+              </div>
+
+              <a
+                href="https://cloneplataformanetflix.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
+              >
+                Visit Project <FiExternalLink />
+              </a>
+            </div>
+
+            <p className="text-sm text-slate-400">Personal React Project</p>
+
+            <p className="text-slate-300 leading-relaxed">
+              Built a Netflix-inspired interface from scratch as a React study
+              project, focusing on component structure, API consumption, dynamic
+              rendering, and visual detail. The application was deployed on
+              Vercel and uses data from The Movie Database API.
+            </p>
+
+            <div className="flex flex-col gap-2 text-slate-300 mt-2">
+              <p>
+                • Developed the project from initial structure to deployment.
+              </p>
+              <p>
+                • Consumed movie and series data using The Movie Database API.
+              </p>
+              <p>
+                • Used React Hooks such as useState and useEffect for state and
+                lifecycle management.
+              </p>
+              <p>
+                • Managed states for the movie catalog, featured content, and
+                header behavior.
+              </p>
+              <p>
+                • Built interactive UI behavior with JavaScript and custom CSS
+                styling.
+              </p>
+              <p>
+                • Published the project on Vercel and planned future
+                improvements such as user screens and content detail pages.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 mt-4">
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                React
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                JavaScript
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                CSS
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                REST API
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Vercel
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Próximo Passo / ERP */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
+        >
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <h2 className="text-2xl font-semibold">Full Stack Developer</h2>
+                <p className="text-blue-400 font-medium">Próximo Passo</p>
+              </div>
+
+              <a
+                href="https://nexsyserp.com.br/painel/painelgerencia/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
+              >
+                Visit Project <FiExternalLink />
+              </a>
+            </div>
+
+            <p className="text-sm text-slate-400">
+              November 2024 – September 2025 | Sorocaba, São Paulo, Brazil
+            </p>
+
+            <p className="text-slate-300 leading-relaxed">
+              Worked on the development and maintenance of a business ERP system
+              designed to optimize internal company processes. Contributed to a
+              centralized platform focused on improving operational efficiency,
+              automation, and usability for different types of businesses.
+            </p>
+
+            <div className="flex flex-col gap-2 text-slate-300 mt-2">
+              <p>• Developed ERP features for business management workflows.</p>
+              <p>• Integrated financial, inventory, and sales modules.</p>
+              <p>• Built backend functionality using PHP and MySQL.</p>
+              <p>
+                • Focused on scalability, performance, and maintainable code.
+              </p>
+              <p>
+                • Helped create a practical and intuitive solution for daily
+                business operations.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 mt-4">
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                PHP
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                MySQL
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                ERP Development
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                MVC
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                System Maintenance
+              </span>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
-export default Projects;
+export default Experience;

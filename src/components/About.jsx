@@ -1,7 +1,7 @@
-import React from 'react'
-import { motion } from 'framer-motion';
-import { BiLogoGithub, BiLogoLinkedin, BiLogoYoutube } from 'react-icons/bi';
-import image from "../../public/alfredo-mello.png";
+import React from "react";
+import { motion } from "framer-motion";
+import { BiLogoLinkedin, BiLogoWhatsapp, BiLogoGithub } from "react-icons/bi";
+import image from "../../public/alfredo-.png";
 
 const About = () => {
   return (
@@ -35,16 +35,42 @@ const About = () => {
             Web Developer
           </h3>
 
-          <p className='text-sm text-slate-400 text-center md:text-left text-pretty'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quo
-            recusandae vel magni totam nisi quisquam culpa pariatur, ea suscipit
-            vero cum sint nesciunt facere similique fuga, ipsam eius placeat!
+          <p className="text-slate-400 text-center md:text-left text-pretty">
+            I develop websites and web applications that combine performance,
+            design, and functionality. With a focus on WordPress, PHP,
+            JavaScript, and React, I turn ideas into modern, responsive, and
+            well-structured digital experiences. I have advanced English
+            proficiency, which strengthens my ability to work with technologies,
+            documentation, and projects in a global environment.
           </p>
 
           <div className="flex gap-5 mt-3">
-            <BiLogoGithub className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-indigo-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
-            <BiLogoLinkedin className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-blue-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
-            <BiLogoYoutube className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-red-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
+            <a
+              href="https://www.linkedin.com/in/alfredo-mello-687653230/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <BiLogoLinkedin className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-blue-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
+            </a>
+
+            <a
+              href="https://github.com/AlfredoMelloDev"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <BiLogoGithub className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-indigo-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
+            </a>
+
+            <a
+              href="https://wa.me/5551991315941"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <BiLogoWhatsapp className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-green-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
+            </a>
           </div>
         </motion.div>
 
@@ -56,6 +82,6 @@ const About = () => {
       </motion.div>
     </div>
   );
-}
+};
 
-export default About
+export default About;

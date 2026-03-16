@@ -1,8 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { BiLogoLinkedin, BiLogoWhatsapp, BiLogoGithub } from "react-icons/bi";
+import {
+  BiLogoLinkedin,
+  BiLogoWhatsapp,
+  BiLogoGithub,
+  BiFile,
+} from "react-icons/bi";
 
-const About = ({ t }) => {
+const About = ({ t, lang }) => {
+  const resumeFile =
+    lang === "pt" ? "/curriculo-alfredo-mello.pdf" : "/cv-alfredo-mello.pdf";
+
   return (
     <div
       className="mx-auto max-w-6xl w-full min-h-screen p-4 pt-28 md:p-8 md:pt-8 lg:p-28 lg:pt-28 flex items-center justify-center"
@@ -45,6 +53,7 @@ const About = ({ t }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
+              title="LinkedIn"
             >
               <BiLogoLinkedin className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-blue-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
             </a>
@@ -54,6 +63,7 @@ const About = ({ t }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
+              title="GitHub"
             >
               <BiLogoGithub className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-indigo-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
             </a>
@@ -63,8 +73,20 @@ const About = ({ t }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
+              title="WhatsApp"
             >
               <BiLogoWhatsapp className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-green-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
+            </a>
+
+            <a
+              href={resumeFile}
+              download
+              aria-label={
+                lang === "pt" ? "Baixar currículo" : "Download resume"
+              }
+              title={lang === "pt" ? "Baixar currículo" : "Download resume"}
+            >
+              <BiFile className="text-2xl md:text-3xl text-white cursor-pointer hover:scale-110 hover:text-red-500 hover:rotate-12 transition-all duration-300 ease-in-out" />
             </a>
           </div>
         </motion.div>

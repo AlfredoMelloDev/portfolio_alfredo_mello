@@ -49,7 +49,7 @@ const About = ({ t, lang }) => {
 
           <div className="flex gap-5 mt-3">
             <a
-              href="https://www.linkedin.com/in/alfredo-mello-687653230/"
+              href="https://www.linkedin.com/in/alfredomello-dev/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

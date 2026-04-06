@@ -9,7 +9,9 @@ import {
 
 const About = ({ t, lang }) => {
   const resumeFile =
-    lang === "pt" ? "/curriculo-alfredo-mello.pdf" : "/cv-alfredo-mello.pdf";
+    lang === "pt"
+      ? "/Alfredo_Mello_Desenvolvedor_Web.pdf"
+      : "/Alfredo_Mello_Web_Developer.pdf";
 
   return (
     <div

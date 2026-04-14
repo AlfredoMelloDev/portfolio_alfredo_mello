@@ -9,7 +9,9 @@ import {
 
 const About = ({ t, lang }) => {
   const resumeFile =
-    lang === "pt" ? "/curriculo-alfredo-mello.pdf" : "/cv-alfredo-mello.pdf";
+    lang === "pt"
+      ? "/Alfredo_Mello_Desenvolvedor_Web.pdf"
+      : "/Alfredo_Mello_Web_Developer.pdf";
 
   return (
     <div
@@ -49,7 +51,7 @@ const About = ({ t, lang }) => {
 
           <div className="flex gap-5 mt-3">
             <a
-              href="https://www.linkedin.com/in/alfredo-mello-687653230/"
+              href="https://www.linkedin.com/in/alfredomello-dev/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

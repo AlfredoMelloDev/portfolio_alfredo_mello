@@ -21,6 +21,15 @@ const Projects = ({ t }) => {
     "Focused on delivering a practical and user-friendly e-commerce experience.",
   ];
 
+  const woostoreBulletsFallback = [
+    "Full e-commerce development featuring consoles, notebooks, and high-end peripherals.",
+    "Advanced layout customization using Elementor Pro for a premium tech-focused UI.",
+    "Seamless payment integration with Mercado Pago and dynamic shipping simulators.",
+    "High-performance optimization using WP Rocket and Smush for fast loading times.",
+    "Custom functionality implemented via Code Snippets for tailored business logic.",
+    "Ensured a secure and responsive checkout experience across all devices.",
+  ];
+
   const netflixBulletsFallback = [
     "Developed the project from initial structure to deployment.",
     "Consumed movie and series data using The Movie Database API.",
@@ -54,6 +63,79 @@ const Projects = ({ t }) => {
       </motion.h1>
 
       <div className="flex flex-col gap-8">
+        {/* WooStore - Tech & Gaming E-commerce */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
+        >
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <h2 className="text-2xl font-semibold">
+                  {t?.roleEcommerceDeveloper || "Desenvolvedor Wordpress "}
+                </h2>
+                <p className="text-blue-400 font-medium">
+                  WooStore - Loja Virtual de Eletrônicos
+                </p>
+              </div>
+
+              <a
+                href="https://woostore.alfredomello.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
+              >
+                {t?.visitProject || "Visit Project"} <FiExternalLink />
+              </a>
+            </div>
+
+            <p className="text-sm text-slate-400">
+              {t?.labelWooStorePersonal ||
+                "Personal E-commerce Project | WordPress & WooCommerce"}
+            </p>
+
+            <p className="text-slate-300 leading-relaxed">
+              {t?.projectsText?.woostore?.description ||
+                "A robust electronics store specializing in consoles, headsets, and gaming gear. Developed using Elementor Pro, this project features advanced shipping simulation, Mercado Pago integration, and aggressive performance optimization with WP Rocket and Smush."}
+            </p>
+
+            <div className="flex flex-col gap-2 text-slate-300 mt-2">
+              {(
+                t?.projectsText?.woostore?.bullets || woostoreBulletsFallback
+              ).map((item, idx) => (
+                <p key={idx}>• {item}</p>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-3 mt-4">
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                WooCommerce
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Elementor Pro
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Mercado Pago
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                WP Rocket
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Code Snippets
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Smush
+              </span>
+              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
+                Yoast
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Thrive Digital */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
@@ -80,10 +162,6 @@ const Projects = ({ t }) => {
                 {t?.visitProject || "Visit Project"} <FiExternalLink />
               </a>
             </div>
-
-            <p className="text-sm text-slate-400">
-              {t?.labelFreelanceBrazil || "Freelance Project | Brazil"}
-            </p>
 
             <p className="text-slate-300 leading-relaxed">
               {t?.projectsText?.thrive?.description ||
@@ -251,7 +329,7 @@ const Projects = ({ t }) => {
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
         >
           <div className="flex flex-col gap-3">

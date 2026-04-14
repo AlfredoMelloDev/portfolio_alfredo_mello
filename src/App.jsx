@@ -23,15 +23,29 @@ const translations = {
     roleFullStackWebDeveloper: "Full Stack Web Developer",
     roleFrontendDeveloper: "Front-End Developer",
     roleFullStackDeveloper: "Full Stack Developer",
+    roleEcomDeveloper: "E-commerce & Web Developer",
 
-    labelFreelanceBrazil: "Freelance Project | Brazil",
     labelPersonalEcommerce: "Personal E-commerce Project",
     labelPersonalReact: "Personal React Project",
+    labelWooStorePersonal:
+      "Personal E-commerce Project | WordPress & WooCommerce",
     labelNextStepTimeplace:
       "November 2024 – September 2025 | Sorocaba, São Paulo, Brazil",
 
-    // ✅ Projects Text (ALL)
+    // Projects Text (ALL)
     projectsText: {
+      woostore: {
+        description:
+          "A robust electronics store specializing in consoles, notebooks, and gaming gear. Built with Elementor Pro, featuring advanced shipping simulation, Mercado Pago integration, and aggressive performance optimization with WP Rocket and Smush.",
+        bullets: [
+          "Full e-commerce development featuring consoles, notebooks, and high-end peripherals.",
+          "Advanced layout customization using Elementor Pro for a premium tech-focused UI.",
+          "Seamless payment integration with Mercado Pago and dynamic shipping simulators.",
+          "High-performance optimization using WP Rocket and Smush for fast loading times.",
+          "Custom functionality implemented via Code Snippets for tailored business logic.",
+          "Ensured a secure and responsive checkout experience across all devices.",
+        ],
+      },
       thrive: {
         description:
           "Developed and redesigned the Thrive Digital website, creating a more modern and strategic online presence aligned with the brand’s new positioning. The project focused on responsiveness, visual identity, performance, and user experience.",
@@ -44,7 +58,6 @@ const translations = {
           "Structured essential pages such as Privacy Policy, Cookies, and Terms & Conditions.",
         ],
       },
-
       hobbi: {
         description:
           "Developed an e-commerce project focused on electronics, building both the frontend and backend structure to support product display, shopping flow, and data management. The project emphasized usability, organization, and scalable development.",
@@ -57,7 +70,6 @@ const translations = {
           "Focused on delivering a practical and user-friendly e-commerce experience.",
         ],
       },
-
       netflix: {
         description:
           "Built a Netflix-inspired interface from scratch as a React study project, focusing on component structure, API consumption, dynamic rendering, and visual detail. The application was deployed on Vercel and uses data from The Movie Database API.",
@@ -70,7 +82,6 @@ const translations = {
           "Published the project on Vercel and planned future improvements such as user screens and content detail pages.",
         ],
       },
-
       proximoPasso: {
         description:
           "Worked on the development and maintenance of a business ERP system designed to optimize internal company processes. Contributed to a centralized platform focused on improving operational efficiency, automation, and usability for different types of businesses.",
@@ -94,7 +105,8 @@ const translations = {
     contactPlaceholderMessage: "Your message",
     contactBtn: "Get in Touch",
     contactSending: "Sending...",
-    contactSuccess: "Message sent successfully! We’ll get back to you shortly.!",
+    contactSuccess:
+      "Message sent successfully! We’ll get back to you shortly.!",
     contactErrorPrefix: "Error",
     contactError: "Failed to send message. Please try again.",
     footerText: "© 2026 Alfredo Mello | All rights reserved.",
@@ -118,15 +130,29 @@ const translations = {
     roleFullStackWebDeveloper: "Desenvolvedor Web Full Stack",
     roleFrontendDeveloper: "Desenvolvedor Front-End",
     roleFullStackDeveloper: "Desenvolvedor Full Stack",
+    roleEcomDeveloper: "Desenvolvedor E-commerce & Web",
 
-    labelFreelanceBrazil: "Projeto Freelance | Brasil",
     labelPersonalEcommerce: "Projeto Pessoal de E-commerce",
     labelPersonalReact: "Projeto Pessoal em React",
+    labelWooStorePersonal:
+      "Projeto Pessoal de E-commerce | WordPress & WooCommerce",
     labelNextStepTimeplace:
-      "Novembro 2024 – Setembro 2025 | Sorocaba, São Paulo, Brasil",
+      "Novembro 2024 – Setembro 2025 | Sorocaba, São Paulo, Brazil",
 
-    // ✅ Projects Text (ALL) PT-BR
+    // Projects Text (ALL) PT-BR
     projectsText: {
+      woostore: {
+        description:
+          "Loja de eletrônicos especializada em consoles, headsets e equipamentos gamers. Desenvolvida com Elementor Pro, conta com simulador de frete avançado, integração com Mercado Pago e otimização agressiva de performance com WP Rocket e Smush.",
+        bullets: [
+          "Desenvolvimento completo de e-commerce focado em consoles, notebooks e periféricos de alto padrão.",
+          "Customização avançada de layout com Elementor Pro para uma UI premium focada em tecnologia.",
+          "Integração fluida de pagamentos com Mercado Pago e simuladores de frete dinâmicos.",
+          "Otimização de performance extrema usando WP Rocket e Smush para carregamento rápido.",
+          "Funcionalidades personalizadas via Code Snippets para lógica de negócio sob medida.",
+          "Garantia de uma experiência de checkout segura e responsiva em todos os dispositivos.",
+        ],
+      },
       thrive: {
         description:
           "Desenvolvi e redesenhei o site da Thrive Digital, criando uma presença online mais moderna e estratégica alinhada ao novo posicionamento da marca. O projeto teve foco em responsividade, identidade visual, performance e experiência do usuário.",
@@ -139,7 +165,6 @@ const translations = {
           "Estruturei páginas essenciais como Política de Privacidade, Cookies e Termos & Condições.",
         ],
       },
-
       hobbi: {
         description:
           "Desenvolvi um projeto de e-commerce focado em eletrônicos, construindo a estrutura de frontend e backend para suportar vitrine de produtos, fluxo de compra e gerenciamento de dados. O projeto teve foco em usabilidade, organização e escalabilidade.",
@@ -152,7 +177,6 @@ const translations = {
           "Foquei em uma experiência prática e amigável para o usuário no e-commerce.",
         ],
       },
-
       netflix: {
         description:
           "Criei uma interface inspirada na Netflix do zero como projeto de estudo em React, com foco em estrutura de componentes, consumo de API, renderização dinâmica e atenção aos detalhes visuais. A aplicação foi publicada na Vercel e utiliza dados da API do The Movie Database.",
@@ -165,16 +189,15 @@ const translations = {
           "Publiquei na Vercel e planejei melhorias futuras como telas de usuário e páginas de detalhe.",
         ],
       },
-
       proximoPasso: {
         description:
           "Atuei no desenvolvimento e manutenção de um sistema ERP empresarial, projetado para otimizar processos internos. Contribuí em uma plataforma centralizada com foco em eficiência operacional, automação e usabilidade para diferentes tipos de negócios.",
         bullets: [
-          "Desenvolvi funcionalidades do ERP para rotinas de gestão.",
-          "Integrei módulos financeiros, estoque e vendas.",
-          "Implementei funcionalidades de backend usando PHP e MySQL.",
-          "Foquei em escalabilidade, performance e código sustentável.",
-          "Contribuí para uma solução prática e intuitiva para o dia a dia da operação.",
+          "Desenvolvimento de funcionalidades do ERP para rotinas de gestão.",
+          "Integração de módulos financeiros, estoque e vendas.",
+          "Implementação de funcionalidades de backend usando PHP e MySQL.",
+          "Foco em escalabilidade, performance e código sustentável.",
+          "Contribuição para uma solução prática e intuitiva para o dia a dia da operação.",
         ],
       },
     },
@@ -189,7 +212,8 @@ const translations = {
     contactPlaceholderMessage: "Sua mensagem",
     contactBtn: "Fale comigo",
     contactSending: "Enviando...",
-    contactSuccess: "Mensagem enviada com sucesso, logo entraremos em contato !",
+    contactSuccess:
+      "Mensagem enviada com sucesso, logo entraremos em contato !",
     contactErrorPrefix: "Erro",
     contactError: "Falha ao enviar. Tente novamente.",
     footerText: "© 2026 Alfredo Mello | Todos os direitos reservados.",

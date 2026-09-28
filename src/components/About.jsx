@@ -15,7 +15,7 @@ const About = ({ t, lang }) => {
 
   return (
     <div
-      className="mx-auto max-w-6xl w-full min-h-screen p-4 pt-28 md:p-8 md:pt-8 lg:p-28 lg:pt-28 flex items-center justify-center"
+      className="mx-auto max-w-6xl w-full min-h-screen p-4 pt-28 md:p-8 md:pt-28 lg:p-12 lg:pt-28 flex items-center justify-center"
       id="about"
     >
       <motion.div
@@ -23,14 +23,14 @@ const About = ({ t, lang }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="flex flex-col-reverse items-center justify-center md:flex-row gap-8 md:gap-16 lg:gap-24"
+        className="flex flex-col-reverse items-center justify-center md:flex-row md:items-start gap-8 md:gap-10 lg:gap-12"
       >
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col items-center md:items-start justify-center gap-3"
+          className="flex-1 min-w-0 flex flex-col items-center md:items-start justify-center gap-3"
         >
           <span className="px-2 py-1 text-white bg-zinc-800 rounded-full text-xs md:text-sm">
             {t?.openToHire || "Open to hire"}
@@ -44,10 +44,11 @@ const About = ({ t, lang }) => {
             {t?.roleTitle || "Web Developer"}
           </h3>
 
-          <p className="text-slate-400 text-center md:text-left text-pretty">
-            {t?.aboutText ||
-              "I develop websites and web applications that combine performance, design, and functionality. With a focus on WordPress, PHP, JavaScript, and React, I turn ideas into modern, responsive, and well-structured digital experiences. I have advanced English proficiency, which strengthens my ability to work with technologies, documentation, and projects in a global environment."}
-          </p>
+          <div className="space-y-4 text-slate-300 text-left leading-relaxed">
+            {t.aboutText.split("\n\n").map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
 
           <div className="flex gap-5 mt-3">
             <a
@@ -100,7 +101,7 @@ const About = ({ t, lang }) => {
           loading="eager"
           fetchPriority="high"
           decoding="async"
-          className="w-[300px] md:w-[400px] rounded-full hover:shadow-2xl hover:shadow-blue-800 hover:scale-105 hover:rotate-2 transition-all duration-500"
+          className="w-[240px] md:w-[260px] lg:w-[300px] shrink-0 rounded-full hover:shadow-2xl hover:shadow-blue-800 hover:scale-105 hover:rotate-2 transition-all duration-500"
           alt={t?.profileAlt || "Profile photo"}
         />
       </motion.div>

@@ -1,397 +1,51 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
-const Projects = ({ t }) => {
-  const thriveBulletsFallback = [
-    "Built and customized pages using WordPress and Elementor.",
-    "Improved the site's structure, layout, and visual consistency.",
-    "Created and adjusted design assets using Canva.",
-    "Implemented SEO, cookies, and chatbot integrations with WordPress plugins.",
-    "Ensured full responsiveness across mobile, tablet, and desktop.",
-    "Structured essential pages such as Privacy Policy, Cookies, and Terms & Conditions.",
-  ];
+const projects = [
+  { id: "deputados", group: "personal", demo: "https://dadospublicos.alfredomello.com/", github: "https://github.com/AlfredoMelloDev/api-deputados-laravel", role: "roleFullStackDeveloper", technologies: ["PHP", "Laravel", "MySQL", "REST API", "Laravel Queues", "PHPUnit"] },
+  { id: "flowcrm", group: "personal", github: "https://github.com/AlfredoMelloDev/flowcrm-saas", role: "roleFullStackDeveloper", technologies: ["Laravel", "React", "MySQL", "Sanctum", "TanStack Query", "Tailwind CSS"] },
+  { id: "netflix", title: "Netflix Clone", group: "personal", demo: "https://cloneplataformanetflix.vercel.app/", role: "roleFrontendDeveloper", technologies: ["React", "JavaScript", "CSS", "REST API", "Vercel"] },
+  { id: "woostore", title: "WooStore - Loja Virtual de Eletrônicos", group: "personal", demo: "https://woostore.alfredomello.com/", role: "roleEcomDeveloper", technologies: ["WordPress", "WooCommerce", "Elementor Pro", "Mercado Pago", "WP Rocket", "Code Snippets"] },
+  { id: "hobbi", title: "Hobbi Eletro", group: "professional", demo: "https://hobbieletro.com.br/", role: "roleFullStackWebDeveloper", technologies: ["PHP", "MySQL", "JavaScript", "E-commerce"] },
+  { id: "thrive", title: "Thrive Digital", group: "professional", demo: "https://thrivedigitalmkt.com.br/", role: "roleWebDeveloper", technologies: ["WordPress", "Elementor", "Canva", "SEO"] },
+  { id: "proximoPasso", title: "Próximo Passo", group: "professional", demo: "https://nexsyserp.com.br/painel/painelgerencia/login", role: "roleFullStackDeveloper", technologies: ["PHP", "MySQL", "ERP", "MVC"] },
+];
 
-  const hobbiBulletsFallback = [
-    "Built product pages, shopping flow, and dynamic interface components.",
-    "Developed backend features using PHP for data handling and business logic.",
-    "Managed database structure and integrations with MySQL.",
-    "Worked on responsive layouts for a consistent cross-device experience.",
-    "Organized code structure to improve maintenance and scalability.",
-    "Focused on delivering a practical and user-friendly e-commerce experience.",
-  ];
+const buttonClass = "inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400";
 
-  const woostoreBulletsFallback = [
-    "Full e-commerce development featuring consoles, notebooks, and high-end peripherals.",
-    "Advanced layout customization using Elementor Pro for a premium tech-focused UI.",
-    "Seamless payment integration with Mercado Pago and dynamic shipping simulators.",
-    "High-performance optimization using WP Rocket and Smush for fast loading times.",
-    "Custom functionality implemented via Code Snippets for tailored business logic.",
-    "Ensured a secure and responsive checkout experience across all devices.",
-  ];
-
-  const netflixBulletsFallback = [
-    "Developed the project from initial structure to deployment.",
-    "Consumed movie and series data using The Movie Database API.",
-    "Used React Hooks such as useState and useEffect for state and lifecycle management.",
-    "Managed states for the movie catalog, featured content, and header behavior.",
-    "Built interactive UI behavior with JavaScript and custom CSS styling.",
-    "Published the project on Vercel and planned future improvements such as user screens and content detail pages.",
-  ];
-
-  const proximoPassoBulletsFallback = [
-    "Developed ERP features for business management workflows.",
-    "Integrated financial, inventory, and sales modules.",
-    "Built backend functionality using PHP and MySQL.",
-    "Focused on scalability, performance, and maintainable code.",
-    "Helped create a practical and intuitive solution for daily business operations.",
-  ];
-
-  return (
-    <section
-      id="experience"
-      className="mx-auto max-w-6xl p-4 sm:p-10 text-white flex flex-col gap-10 sm:gap-16"
-    >
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl sm:text-6xl text-center"
-      >
-        {t?.projectsTitle || "Experience"}
-      </motion.h1>
-
-      <div className="flex flex-col gap-8">
-        {/* WooStore - Tech & Gaming E-commerce */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
-        >
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  {t?.roleEcommerceDeveloper || "Desenvolvedor Wordpress "}
-                </h2>
-                <p className="text-blue-400 font-medium">
-                  WooStore - Loja Virtual de Eletrônicos
-                </p>
+const Projects = ({ t }) => (
+  <section id="experience" className="scroll-mt-24 mx-auto max-w-6xl p-4 sm:p-10 text-white flex flex-col gap-10 sm:gap-16">
+    <h2 className="text-4xl sm:text-6xl text-center">{t.projectsTitle}</h2>
+    {[{ id: "personal", title: t.personalProjects }, { id: "professional", title: t.professionalProjects }].map((group) => (
+      <section key={group.id} aria-labelledby={`${group.id}-projects`} className="flex flex-col gap-8">
+        <h3 id={`${group.id}-projects`} className="text-2xl sm:text-3xl font-semibold text-blue-400">{group.title}</h3>
+        {projects.filter((project) => project.group === group.id).map((project) => {
+          const content = t.featuredProjects.find((item) => item.id === project.id) || t.projectsText[project.id];
+          return (
+            <motion.article key={project.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} aria-labelledby={`project-${project.id}`} className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg">
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div>
+                    <h4 id={`project-${project.id}`} className="text-2xl font-semibold">{content.title || project.title}</h4>
+                    <p className="text-blue-400 font-medium">{t[project.role]}</p>
+                  </div>
+                  {content.status && <span className={`self-start px-3 py-1 rounded-full text-sm ${project.demo ? "bg-emerald-950 text-emerald-300" : "bg-amber-950 text-amber-300"}`}>{content.status}</span>}
+                </div>
+                {project.id === "proximoPasso" && <p className="text-sm text-slate-400">{t.labelNextStepTimeplace}</p>}
+                <p className="text-slate-300 leading-relaxed">{content.description}</p>
+                <ul className="list-disc pl-5 space-y-2 text-slate-300">{content.bullets.map((item) => <li key={item}>{item}</li>)}</ul>
+                <div className="flex flex-wrap gap-3">{project.technologies.map((technology) => <span key={technology} className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">{technology}</span>)}</div>
+                <div className="flex flex-wrap gap-3 mt-2">
+                  {project.demo && <a href={project.demo} target="_blank" rel="noopener noreferrer" className={`${buttonClass} bg-indigo-900 hover:bg-indigo-800`}>{project.group === "professional" ? t.visitProject : t.viewDemo} <FiExternalLink aria-hidden="true" /></a>}
+                  {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className={`${buttonClass} border border-slate-600 hover:bg-slate-800`}>{t.viewCode} <FiGithub aria-hidden="true" /></a>}
+                </div>
               </div>
-
-              <a
-                href="https://woostore.alfredomello.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
-              >
-                {t?.visitProject || "Visit Project"} <FiExternalLink />
-              </a>
-            </div>
-
-            <p className="text-sm text-slate-400">
-              {t?.labelWooStorePersonal ||
-                "Personal E-commerce Project | WordPress & WooCommerce"}
-            </p>
-
-            <p className="text-slate-300 leading-relaxed">
-              {t?.projectsText?.woostore?.description ||
-                "A robust electronics store specializing in consoles, headsets, and gaming gear. Developed using Elementor Pro, this project features advanced shipping simulation, Mercado Pago integration, and aggressive performance optimization with WP Rocket and Smush."}
-            </p>
-
-            <div className="flex flex-col gap-2 text-slate-300 mt-2">
-              {(
-                t?.projectsText?.woostore?.bullets || woostoreBulletsFallback
-              ).map((item, idx) => (
-                <p key={idx}>• {item}</p>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-3 mt-4">
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                WooCommerce
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Elementor Pro
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Mercado Pago
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                WP Rocket
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Code Snippets
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Smush
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Yoast
-              </span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Thrive Digital */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
-        >
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  {t?.roleWebDeveloper || "Web Developer"}
-                </h2>
-                <p className="text-blue-400 font-medium">Thrive Digital</p>
-              </div>
-
-              <a
-                href="https://thrivedigitalmkt.com.br/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
-              >
-                {t?.visitProject || "Visit Project"} <FiExternalLink />
-              </a>
-            </div>
-
-            <p className="text-slate-300 leading-relaxed">
-              {t?.projectsText?.thrive?.description ||
-                "Developed and redesigned the Thrive Digital website, creating a more modern and strategic online presence aligned with the brand’s new positioning. The project focused on responsiveness, visual identity, performance, and user experience."}
-            </p>
-
-            <div className="flex flex-col gap-2 text-slate-300 mt-2">
-              {(t?.projectsText?.thrive?.bullets || thriveBulletsFallback).map(
-                (item, idx) => (
-                  <p key={idx}>• {item}</p>
-                ),
-              )}
-            </div>
-
-            <div className="flex flex-wrap gap-3 mt-4">
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                WordPress
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Elementor
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Canva
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                SEO
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Responsive Design
-              </span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Hobbi Eletro */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
-        >
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  {t?.roleFullStackWebDeveloper || "Full Stack Web Developer"}
-                </h2>
-                <p className="text-blue-400 font-medium">Hobbi Eletro</p>
-              </div>
-
-              <a
-                href="https://hobbieletro.com.br/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
-              >
-                {t?.visitProject || "Visit Project"} <FiExternalLink />
-              </a>
-            </div>
-
-            <p className="text-sm text-slate-400">
-              {t?.labelPersonalEcommerce || "Personal E-commerce Project"}
-            </p>
-
-            <p className="text-slate-300 leading-relaxed">
-              {t?.projectsText?.hobbi?.description ||
-                "Developed an e-commerce project focused on electronics, building both the frontend and backend structure to support product display, shopping flow, and data management. The project emphasized usability, organization, and scalable development."}
-            </p>
-
-            <div className="flex flex-col gap-2 text-slate-300 mt-2">
-              {(t?.projectsText?.hobbi?.bullets || hobbiBulletsFallback).map(
-                (item, idx) => (
-                  <p key={idx}>• {item}</p>
-                ),
-              )}
-            </div>
-
-            <div className="flex flex-wrap gap-3 mt-4">
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                PHP
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                MySQL
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                JavaScript
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                E-commerce
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Responsive Design
-              </span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Netflix Clone */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
-        >
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  {t?.roleFrontendDeveloper || "Front-End Developer"}
-                </h2>
-                <p className="text-blue-400 font-medium">Netflix Clone</p>
-              </div>
-
-              <a
-                href="https://cloneplataformanetflix.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
-              >
-                {t?.visitProject || "Visit Project"} <FiExternalLink />
-              </a>
-            </div>
-
-            <p className="text-sm text-slate-400">
-              {t?.labelPersonalReact || "Personal React Project"}
-            </p>
-
-            <p className="text-slate-300 leading-relaxed">
-              {t?.projectsText?.netflix?.description ||
-                "Built a Netflix-inspired interface from scratch as a React study project, focusing on component structure, API consumption, dynamic rendering, and visual detail. The application was deployed on Vercel and uses data from The Movie Database API."}
-            </p>
-
-            <div className="flex flex-col gap-2 text-slate-300 mt-2">
-              {(
-                t?.projectsText?.netflix?.bullets || netflixBulletsFallback
-              ).map((item, idx) => (
-                <p key={idx}>• {item}</p>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-3 mt-4">
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                React
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                JavaScript
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                CSS
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                REST API
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                Vercel
-              </span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Próximo Passo / ERP */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="bg-gray-900 rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-lg"
-        >
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  {t?.roleFullStackDeveloper || "Full Stack Developer"}
-                </h2>
-                <p className="text-blue-400 font-medium">Próximo Passo</p>
-              </div>
-
-              <a
-                href="https://nexsyserp.com.br/painel/painelgerencia/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-800 transition-all duration-300 hover:scale-105 text-sm font-medium"
-              >
-                {t?.visitProject || "Visit Project"} <FiExternalLink />
-              </a>
-            </div>
-
-            <p className="text-sm text-slate-400">
-              {t?.labelNextStepTimeplace ||
-                "November 2024 – September 2025 | Sorocaba, São Paulo, Brazil"}
-            </p>
-
-            <p className="text-slate-300 leading-relaxed">
-              {t?.projectsText?.proximoPasso?.description ||
-                "Worked on the development and maintenance of a business ERP system designed to optimize internal company processes. Contributed to a centralized platform focused on improving operational efficiency, automation, and usability for different types of businesses."}
-            </p>
-
-            <div className="flex flex-col gap-2 text-slate-300 mt-2">
-              {(
-                t?.projectsText?.proximoPasso?.bullets ||
-                proximoPassoBulletsFallback
-              ).map((item, idx) => (
-                <p key={idx}>• {item}</p>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-3 mt-4">
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                PHP
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                MySQL
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                ERP Development
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                MVC
-              </span>
-              <span className="px-3 py-1 bg-indigo-900 rounded-xl text-sm">
-                System Maintenance
-              </span>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
+            </motion.article>
+          );
+        })}
+      </section>
+    ))}
+  </section>
+);
 
 export default Projects;

@@ -6,17 +6,44 @@ import Contact from "./components/Contact";
 
 const translations = {
   en: {
+    "viewCode": "View code on GitHub",
+    "viewDemo": "Live demo",
+    "featuredProjects": [
+        {
+            "id": "deputados",
+            "title": "Deputies API & Dashboard",
+            "status": "Live",
+            "description": "Laravel application that integrates with the Brazilian Chamber of Deputies open data API to make parliamentary spending easier to explore.",
+            "bullets": [
+                "Search deputies and explore spending through filters, charts and rankings.",
+                "Export filtered expenses to CSV and access a versioned JSON API.",
+                "Synchronize deputies and expenses with background jobs and MySQL persistence."
+            ]
+        },
+        {
+            "id": "flowcrm",
+            "title": "FlowCRM",
+            "status": "In development",
+            "description": "A SaaS CRM built with Laravel and React for managing leads and clients, with isolated data for each company and role-based access.",
+            "bullets": [
+                "Manage leads and clients with search, filters and assigned owners.",
+                "Authenticate with Laravel Sanctum and control access for administrators, managers and sellers.",
+                "Automated backend and frontend tests; the opportunities pipeline is under development."
+            ]
+        }
+    ],
     nav: { about: "About", projects: "Projects", contact: "Contact" },
 
     // About
     openToHire: "Open to hire",
-    roleTitle: "Web Developer",
-    aboutText:
-      "I develop websites and web applications that combine performance, design, and functionality. With a focus on WordPress, PHP, JavaScript, and React, I turn ideas into modern, responsive, and well-structured digital experiences. I have advanced English proficiency, which strengthens my ability to work with technologies, documentation, and projects in a global environment.",
+    roleTitle: "Full Stack Developer",
+    aboutText: "I am a Full Stack Developer with hands-on experience developing and maintaining web applications, working primarily with PHP, CodeIgniter 4, MySQL, JavaScript, React, REST APIs and Git.\n\nI contributed professionally to the evolution of a business ERP, implementing features, business rules and integrations, fixing bugs, writing tests, and working on finance, inventory and sales modules.\n\nI also have knowledge of Laravel, React.js, Next.js and responsive interface development, along with experience in e-commerce projects and web applications.\n\nI use AI tools in development, including Claude Code and ChatGPT, to support code analysis, debugging, refactoring, technical documentation and implementation, always validating the results directly in the code and tests.\n\nI am currently completing my degree in Systems Analysis and Development at ULBRA and seeking Full Stack, PHP or Back-end Developer opportunities where I can contribute to software development and continue growing technically.",
     profileAlt: "Profile photo",
 
     // Projects / Experience
-    projectsTitle: "Experience",
+    projectsTitle: "Projects",
+    personalProjects: "Personal projects",
+    professionalProjects: "Professional projects",
     visitProject: "Visit Project",
 
     roleWebDeveloper: "Web Developer",
@@ -113,17 +140,44 @@ const translations = {
   },
 
   pt: {
+    "viewCode": "Ver código no GitHub",
+    "viewDemo": "Acessar demonstração",
+    "featuredProjects": [
+        {
+            "id": "deputados",
+            "title": "API e Painel de Deputados",
+            "status": "Online",
+            "description": "Aplicação Laravel integrada à API de Dados Abertos da Câmara dos Deputados para facilitar a consulta e a análise de despesas parlamentares.",
+            "bullets": [
+                "Busca de deputados e consulta de despesas com filtros, gráficos e rankings.",
+                "Exportação das despesas filtradas em CSV e acesso por API JSON versionada.",
+                "Sincronização de deputados e despesas com tarefas em segundo plano e persistência em MySQL."
+            ]
+        },
+        {
+            "id": "flowcrm",
+            "title": "FlowCRM",
+            "status": "Em desenvolvimento",
+            "description": "CRM SaaS desenvolvido com Laravel e React para gerenciar leads e clientes, com dados isolados por empresa e permissões por perfil de usuário.",
+            "bullets": [
+                "Gestão de leads e clientes com busca, filtros e atribuição de responsáveis.",
+                "Autenticação com Laravel Sanctum e controle de acesso para administradores, gerentes e vendedores.",
+                "Testes automatizados no backend e frontend; pipeline de oportunidades em desenvolvimento."
+            ]
+        }
+    ],
     nav: { about: "Sobre", projects: "Projetos", contact: "Contato" },
 
     // About
     openToHire: "Disponível para contratar",
-    roleTitle: "Desenvolvedor Web",
-    aboutText:
-      "Eu desenvolvo sites e aplicações web que combinam performance, design e funcionalidade. Com foco em WordPress, PHP, JavaScript e React, transformo ideias em experiências digitais modernas, responsivas e bem estruturadas. Tenho inglês avançado, o que fortalece minha atuação com tecnologias, documentação e projetos em um ambiente global.",
+    roleTitle: "Desenvolvedor Full Stack",
+    aboutText: "Sou Desenvolvedor Full Stack com experiência prática no desenvolvimento e manutenção de aplicações web, atuando principalmente com PHP, CodeIgniter 4, MySQL, JavaScript, React, APIs REST e Git.\n\nAtuei profissionalmente na evolução de um ERP empresarial, trabalhando com implementação de funcionalidades, regras de negócio, integrações, correção de bugs, testes e módulos de financeiro, estoque e vendas.\n\nTambém possuo conhecimentos em Laravel, React.js, Next.js e desenvolvimento de interfaces responsivas, além de experiência com projetos de e-commerce e aplicações web.\n\nUtilizo Inteligência Artificial aplicada ao desenvolvimento, incluindo Claude Code e ChatGPT, como apoio em análise de código, debugging, refatoração, documentação técnica e implementação de soluções, sempre validando o resultado diretamente no código e nos testes.\n\nAtualmente estou finalizando Análise e Desenvolvimento de Sistemas na ULBRA e busco oportunidades como Desenvolvedor Full Stack, PHP ou Back-end, onde possa contribuir com desenvolvimento de software e continuar evoluindo tecnicamente.",
     profileAlt: "Foto de perfil",
 
     // Projects / Experience
-    projectsTitle: "Experiência",
+    projectsTitle: "Projetos",
+    personalProjects: "Projetos pessoais",
+    professionalProjects: "Projetos profissionais",
     visitProject: "Ver Projeto",
 
     roleWebDeveloper: "Desenvolvedor Web",

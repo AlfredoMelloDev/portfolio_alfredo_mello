@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
@@ -37,7 +38,31 @@ const translations = {
     // About
     openToHire: "Open to hire",
     roleTitle: "Full Stack Developer",
-    aboutText: "I am a Full Stack Developer with hands-on experience developing and maintaining web applications, working primarily with PHP, CodeIgniter 4, MySQL, JavaScript, React, REST APIs and Git.\n\nI contributed professionally to the evolution of a business ERP, implementing features, business rules and integrations, fixing bugs, writing tests, and working on finance, inventory and sales modules.\n\nI also have knowledge of Laravel, React.js, Next.js and responsive interface development, along with experience in e-commerce projects and web applications.\n\nI use AI tools in development, including Claude Code and ChatGPT, to support code analysis, debugging, refactoring, technical documentation and implementation, always validating the results directly in the code and tests.\n\nI am currently completing my degree in Systems Analysis and Development at ULBRA and seeking Full Stack, PHP or Back-end Developer opportunities where I can contribute to software development and continue growing technically.",
+    aboutText: "I am a Full Stack Developer with hands-on experience developing and maintaining web applications, working primarily with PHP, CodeIgniter 4, MySQL, JavaScript, React, REST APIs and Git.\n\nI contributed professionally to the evolution of a business ERP, implementing features, business rules and integrations, fixing bugs, writing tests, and working on finance, inventory and sales modules.\n\nIn my projects, I also work with Laravel and React and continue developing my knowledge of TypeScript, Next.js, automated testing and Docker. I focus on organized code, responsive interfaces and reliable integrations.\n\nI use AI tools in development, including Claude Code and ChatGPT/Codex, to support code analysis, debugging, refactoring, technical documentation and implementation, always validating the results directly in the code and tests.\n\nI am currently completing my degree in Systems Analysis and Development at ULBRA and seeking Full Stack, PHP or Back-end Developer opportunities where I can contribute to software development and continue growing technically.",
+    skillsTitle: "Technologies & skills",
+    automatedTests: "Automated testing",
+    skillGroups: {
+      "backend": {
+            "title": "Back-end & data",
+            "description": "Web applications, business rules, relational databases and API integrations."
+      },
+      "frontend": {
+            "title": "Front-end",
+            "description": "Responsive interfaces with React and JavaScript, with ongoing learning in TypeScript and Next.js."
+      },
+      "workflow": {
+            "title": "Development practices",
+            "description": "Version control, automated tests to validate behavior and knowledge of Docker for development environments."
+      },
+      "ai": {
+            "title": "AI applied to development",
+            "description": "Tools that support programming, debugging and documentation, with code review and validation through tests."
+      },
+      "complementary": {
+            "title": "Complementary knowledge",
+            "description": "WordPress and WooCommerce for websites and e-commerce projects."
+      }
+},
     profileAlt: "Profile photo",
 
     // Projects / Experience
@@ -171,7 +196,31 @@ const translations = {
     // About
     openToHire: "Disponível para contratar",
     roleTitle: "Desenvolvedor Full Stack",
-    aboutText: "Sou Desenvolvedor Full Stack com experiência prática no desenvolvimento e manutenção de aplicações web, atuando principalmente com PHP, CodeIgniter 4, MySQL, JavaScript, React, APIs REST e Git.\n\nAtuei profissionalmente na evolução de um ERP empresarial, trabalhando com implementação de funcionalidades, regras de negócio, integrações, correção de bugs, testes e módulos de financeiro, estoque e vendas.\n\nTambém possuo conhecimentos em Laravel, React.js, Next.js e desenvolvimento de interfaces responsivas, além de experiência com projetos de e-commerce e aplicações web.\n\nUtilizo Inteligência Artificial aplicada ao desenvolvimento, incluindo Claude Code e ChatGPT, como apoio em análise de código, debugging, refatoração, documentação técnica e implementação de soluções, sempre validando o resultado diretamente no código e nos testes.\n\nAtualmente estou finalizando Análise e Desenvolvimento de Sistemas na ULBRA e busco oportunidades como Desenvolvedor Full Stack, PHP ou Back-end, onde possa contribuir com desenvolvimento de software e continuar evoluindo tecnicamente.",
+    aboutText: "Sou Desenvolvedor Full Stack com experiência prática no desenvolvimento e manutenção de aplicações web, atuando principalmente com PHP, CodeIgniter 4, MySQL, JavaScript, React, APIs REST e Git.\n\nAtuei profissionalmente na evolução de um ERP empresarial, trabalhando com implementação de funcionalidades, regras de negócio, integrações, correção de bugs, testes e módulos de financeiro, estoque e vendas.\n\nNos meus projetos, também trabalho com Laravel e React e continuo aprofundando meus conhecimentos em TypeScript, Next.js, testes automatizados e Docker. Meu foco está em código organizado, interfaces responsivas e integrações confiáveis.\n\nUtilizo Inteligência Artificial aplicada ao desenvolvimento, incluindo Claude Code e ChatGPT/Codex, como apoio em análise de código, debugging, refatoração, documentação técnica e implementação de soluções, sempre validando o resultado diretamente no código e nos testes.\n\nAtualmente estou finalizando Análise e Desenvolvimento de Sistemas na ULBRA e busco oportunidades como Desenvolvedor Full Stack, PHP ou Back-end, onde possa contribuir com desenvolvimento de software e continuar evoluindo tecnicamente.",
+    skillsTitle: "Tecnologias e habilidades",
+    automatedTests: "Testes automatizados",
+    skillGroups: {
+      "backend": {
+            "title": "Back-end e dados",
+            "description": "Aplicações web, regras de negócio, bancos relacionais e integração de APIs."
+      },
+      "frontend": {
+            "title": "Front-end",
+            "description": "Interfaces responsivas com React e JavaScript, com aprendizado contínuo em TypeScript e Next.js."
+      },
+      "workflow": {
+            "title": "Práticas de desenvolvimento",
+            "description": "Versionamento, testes automatizados para validar comportamentos e conhecimentos de Docker para ambientes de desenvolvimento."
+      },
+      "ai": {
+            "title": "IA aplicada ao desenvolvimento",
+            "description": "Ferramentas de apoio à programação, investigação de bugs e documentação, com revisão do código e validação por testes."
+      },
+      "complementary": {
+            "title": "Conhecimentos complementares",
+            "description": "WordPress e WooCommerce para projetos de sites e e-commerce."
+      }
+},
     profileAlt: "Foto de perfil",
 
     // Projects / Experience
@@ -290,6 +339,7 @@ function App() {
 
       <Navbar t={t} />
       <About t={t} lang={lang} />
+      <Skills t={t} />
       <Projects t={t} />
       <Contact t={t} />
     </div>
